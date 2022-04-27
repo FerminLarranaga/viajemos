@@ -1,0 +1,517 @@
+.registerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fafafa;
+}
+
+.login_Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerSubContainer{
+    width: 100vw;
+    max-width: 550px;
+    flex: 2;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer{
+    border: solid 1px #dbdbdb;
+    border-radius: 1px;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    background: #fff;
+}
+
+.instagramIMGTitle{
+    width: 55%;
+    max-width: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 4px auto 7px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.registerForm_title{
+    color: #8e8e8e;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 40px 20px;
+    text-align: center;
+}
+
+.loginForm_title{
+    color: #8e8e8e;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 40px 30px;
+    text-align: center;
+}
+
+.registerForm_fieldContainer{
+    margin: 0 0 15px;
+}
+
+.loginForm_fieldContainer{
+    margin: 0 40px 15px;
+}
+
+.registerForm_field{
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background: #fafafa;
+    display: flex;
+}
+
+.fieldIsFocused{
+    border: 1px solid #a8a8a8;
+}
+
+.registerForm_label{
+    position: relative;
+    display: flex;
+    height: 36px;
+    width: 100%;
+    min-width: 0;
+}
+
+.registerForm_labelSpan{
+    color: #8e8e8e;
+    position: absolute;
+    font-size: 12px;
+    height: 36px;
+    left: 8px;
+    right: 0;
+    line-height: 36px;
+    overflow: hidden;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    transform-origin: left;
+    user-select: none;
+    white-space: nowrap;
+    transition: transform ease-out .1s;
+}
+
+.registerForm_labelAnim > .registerForm_labelSpan{
+    transform: scale(.83333) translateY(-10px);
+}
+
+.registerForm_input{
+    padding: 9px 0 7px 8px;
+    background: #fafafa;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+}
+
+.registerForm_inputInvalid{
+    border: 1px dashed red;
+}
+
+.registerForm_input:focus-visible{
+    outline: none !important;
+}
+
+.registerForm_labelAnim > .registerForm_input {
+    font-size: 12px;
+    padding: 14px 0 2px 8px !important;
+}
+
+.registerForm_checkboxTitle{
+    color: #8e8e8e;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.registerForm_checkboxField{
+    margin-left: 20px;
+}
+
+.registerForm_checkboxInput{
+    margin-right: 10px;
+}
+
+.registerForm_checkboxLabel{
+    color: #262626;
+    font-size: 12px;
+}
+
+.registerForm_birthLabel{
+    color: #8e8e8e;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.registerSubmitBtn{
+    background: rgba(0, 149, 256, 1);
+    margin: 20px 40px 8px 40px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 5px 8px;
+    color: #fff;
+    font-weight: 550;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.registerSubmitBtn[disabled]{
+    background: rgba(0, 149, 256, .3);
+    cursor: default;
+}
+
+.registerSubmitBtn:active{
+    opacity: .7;
+}
+
+.redirectToSignInContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    padding: 10px 0;
+    background: #fff;
+}
+
+.redirectToSignIn{
+    margin: 15px;
+    color: #262626;
+    font-size: 14px;
+}
+
+.redirectToSignIn_link{
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.redirectToSignIn_link:active{
+    opacity: .5;
+}
+
+/*SIGN IN STYLES*/
+
+._signinIgIMGTitle{
+    margin: 22px auto 15px;
+}
+
+._signin_fieldContainer{
+    margin: 0 40px 10px;
+}
+
+.registerForm_loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(78, 78, 78, 0.425);
+}
+
+@media (max-width: 650px){
+    .registerContainer{
+        align-items: flex-start;
+        background: #fff;
+    }
+
+    .registerSubContainer{
+        margin: 0;
+        max-width: none;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* .formContainer{
+        border: none;
+        border-top: 1px solid #dbdbdb;
+    }
+
+    .redirectToSignInContainer{
+        border: none;
+        border-top: 1px solid #dbdbdb;
+        border-bottom: 1px solid #dbdbdb;
+    } */
+}
+
+.Register2_container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px 10px 20px;
+}
+
+.Register2_headerDNIContainer{
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.Register2_header{
+    background: #37bbed;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.Register2_headerTitle{
+    color: white;
+    font-weight: 600;
+    margin-top: -1px;
+    display: block;
+    font-size: 17px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Register_cameraVideoContainer{
+    position: fixed;
+    width: min(700px, 100vw);
+    z-index: 12;
+    top: 0;
+    height: 100vh;
+}
+
+.Register_cameraVideo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.Register_cameraVideoMaskContainer{
+    width: min(100vw, 700px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    /* background: rgba(255, 255, 255, 0.664); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Register_cameraVideoMask{
+    border: 8px dashed black;
+    width: 100%;
+    height: 50vh;
+    margin: 0 30px;
+}
+
+.Register_cameraBtns{
+    position: fixed;
+    bottom: 10px;
+    margin-bottom: 5vh;
+    width: min(100%, 700px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15vw;
+}
+
+.Register_cameraBtns > button{
+    padding: 35px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    position: fixed;
+    background: rgb(209, 209, 209);
+    border: 4px dashed rgb(43, 43, 43);
+    border-radius: 50%;
+}
+
+.Register_cameraBtns > button:active{
+    background: rgb(131, 131, 131);
+    border: 4px dashed rgb(242, 242, 242);
+}
+
+.Register_photoCanvas{
+    position: fixed;
+    /* width: 100vw; */
+    /* object-fit: cover; */
+    height: 100vh;
+    top: 0;
+}
+
+.DNI_profilePhoto{
+    position: absolute;
+    display: block !important;
+}
+
+.DNI_profilePhoto > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.register_loadingPanel{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    max-width: 700px;
+    height: 100vh;
+    background: #2626266e;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register_loadingCircle{
+    width: 70px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 5px solid rgb(16, 62, 122);
+    border-bottom: 5px solid transparent;
+    animation: loadingCircleAnim infinite 1s ease-in-out;
+}
+
+@keyframes loadingCircleAnim{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.registerForm_signContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerForm_signContainer > canvas{
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.registerForm_signContainer > span{
+    color: #8e8e8e;
+    display: block;
+    font-size: 15px;
+    margin-left: 7px;
+    width: 100%;
+    line-height: 36px;
+    overflow: hidden;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    transform-origin: left;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.registerForm_signContainer>button{
+    margin-top: 10px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.registerForm_signContainer>button:active{
+    background: #a1a1a1;
+}
+
+.registerForm_repositionBtnsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.registerForm_repositionBtns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.registerForm_repositionBtnsContainer > span{
+    color: #8e8e8e;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.registerForm_repositionBtns button{
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.registerForm_repositionBtns button:active{
+    background: #bdbdbd;
+}
+
+.registerForm_repositionBtnsHoriz{
+    display: flex;
+    width: 100%;
+    padding: 0 20px;
+    justify-content: space-around;
+}
+
+.registerForm_repositionBtnsReset{
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    align-self: center;
+}
+
+.registerForm_repositionBtnsReset:active{
+    background: #a1a1a1;
+}
+
+.signinLogo{
+    width: 45%;
+    max-width: 180px;
+    align-self: center;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    transform: translateY(6vh);
+}
+
+.registerFormContainer{
+    width: 100vw;
+    max-width: 500px;
+}
+
+.registerLogo{
+    width: 40%;
+    max-width: 180px;
+    margin-top: 60px;
+}

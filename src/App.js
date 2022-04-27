@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { createContext, useContext } from 'react';
+import AuthProvider from './authentication/AuthProvider';
+import Register from './components/Auth/Register';
+import Signin from './components/Auth/Signin';
+import Home from './components/Home/Home';
+import RequireAuth from './authentication/RequireAuth';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path='/register'
+            element={<Register />}
+          />
+          <Route
+            path='/signin'
+            element={<Signin />}
+          />
+          <Route
+            path='/'
+            element={
+              <RequireAuth>
+                <Home />
+              </RequireAuth>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
+}
+
+export const AuthContext = createContext(null);
+
+export function useAuth() {
+  return useContext(AuthContext);
 }
 
 export default App;
