@@ -6,10 +6,12 @@ import Signin from './components/Auth/Signin';
 import Home from './components/Home/Home';
 import RequireAuth from './authentication/RequireAuth';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ServiceWorkerWrapper from './components/ServiceWorkerWrapper/ServiceWorkerWrapper';
 
 function App() {
   return (
     <AuthProvider>
+      <ServiceWorkerWrapper />
       <BrowserRouter>
         <Routes>
           <Route

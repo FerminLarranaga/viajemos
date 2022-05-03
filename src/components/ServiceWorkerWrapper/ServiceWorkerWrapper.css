@@ -1,0 +1,42 @@
+.serviceWNotification{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    min-height: 45vw;
+    padding: 30px 0;
+    transform: translate(-40vw, -80vw);
+    background: rgb(0, 0, 0);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10000;
+}
+
+.serviceWNotification > h1{
+    /* color: rgb(162, 255, 248); */
+    text-shadow: 0px 10px 20px white;
+    color: white;
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.serviceWNotification > button{
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    background: rgb(30, 126, 216);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    box-shadow: 0 0 20px white;
+}
+
+.serviceWNotification > button:active{
+    background: rgb(158, 158, 158);
+}

@@ -105,7 +105,7 @@ const Register = () => {
                 // }
                 // const regex = new RegExp('^[0-9]{6,6}$');
                 // isValid = regex.test(value);
-                if (value.split('').length > 5){
+                if (value.split('').length > 5) {
                     isValid = true;
                 }
 
@@ -247,209 +247,204 @@ const Register = () => {
 
     return (
         <div className='Register2_container'>
-        <div className='Register2_headerDNIContainer'>
-            <header className='Register2_header'>
-                <h1 className='Register2_headerTitle'>Registro</h1>
-            </header>
-        </div>
-        <img className='registerLogo' src={Logo_img} alt='logo'/>
-        <form className='registerForm' onSubmit={registerUser} ref={registerFormRef}>
-            <h2 className='registerForm_title'>Completa los datos para registrarte</h2>
+            <img className='registerLogo' src={Logo_img} alt='logo' />
+            <form className='registerForm' onSubmit={registerUser} ref={registerFormRef}>
+                <h2 className='registerForm_title'>Completa los datos para registrarte</h2>
 
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>Nombre</span>
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>Nombre</span>
+                            <input
+                                name='name'
+                                className='registerForm_input'
+                                type='text'
+                                autoCapitalize='words'
+                                required
+                                autoCorrect='false'
+                                autoComplete='name'
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.name.value}
+                            />
+                        </label>
+                    </div>
+                </div>
+
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>Apellido</span>
+                            <input
+                                name='surname'
+                                className='registerForm_input'
+                                type='text'
+                                autoComplete='surname'
+                                autoCapitalize='words'
+                                required
+                                autoCorrect='off'
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.surname.value}
+                            />
+                        </label>
+                    </div>
+                </div>
+
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>Domicilio</span>
+                            <input
+                                name='adress'
+                                className='registerForm_input'
+                                type='text'
+                                autoCapitalize='characters'
+                                required
+                                autoCorrect='off'
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.adress.value}
+                            />
+                        </label>
+                    </div>
+                </div>
+
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>DNI</span>
+                            <input
+                                name='dni'
+                                className='registerForm_input'
+                                type='number'
+                                required
+                                autoCorrect='false'
+                                autoComplete='dni'
+                                pattern="^[0-9]{8,8}$"
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.dni.value}
+                            />
+                        </label>
+                    </div>
+                </div>
+
+                <div className='registerForm_fieldContainer'>
+                    <span className='registerForm_checkboxTitle'>Sexo</span>
+                    <div className='registerForm_checkboxField' style={{ marginBottom: 3 }}>
                         <input
-                            name='name'
-                            className='registerForm_input'
-                            type='text'
-                            autoCapitalize='words'
-                            required
-                            autoCorrect='false'
-                            autoComplete='name'
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.name.value}
+                            type='radio'
+                            name='sex'
+                            className='registerForm_checkboxInput'
+                            value='Masculino'
+                            onChange={checkValue}
                         />
-                    </label>
-                </div>
-            </div>
-
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>Apellido</span>
+                        <label className='registerForm_checkboxLabel'>Masculino</label>
+                    </div>
+                    <div className='registerForm_checkboxField'>
                         <input
-                            name='surname'
-                            className='registerForm_input'
-                            type='text'
-                            autoComplete='surname'
-                            autoCapitalize='words'
-                            required
-                            autoCorrect='off'
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.surname.value}
+                            type='radio'
+                            name='sex'
+                            className='registerForm_checkboxInput'
+                            value='Femenino'
+                            onChange={checkValue}
                         />
-                    </label>
+                        <label className='registerForm_checkboxLabel'>Femenino</label>
+                    </div>
                 </div>
-            </div>
 
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>Domicilio</span>
-                        <input
-                            name='adress'
-                            className='registerForm_input'
-                            type='text'
-                            autoCapitalize='characters'
-                            required
-                            autoCorrect='off'
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.adress.value}
-                        />
-                    </label>
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>{"Nacimiento (MES/DÍA/AÑO)"}</span>
+                            <input
+                                name='birth'
+                                className='registerForm_input'
+                                type='text'
+                                autoCapitalize='off'
+                                pattern='^[0-9/ -]+$'
+                                required
+                                autoCorrect='off'
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.birth.value}
+                            />
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>DNI</span>
-                        <input
-                            name='dni'
-                            className='registerForm_input'
-                            type='number'
-                            required
-                            autoCorrect='false'
-                            autoComplete='dni'
-                            pattern="^[0-9]{8,8}$"
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.dni.value}
-                        />
-                    </label>
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>Correo electronico</span>
+                            <input
+                                name='email'
+                                className='registerForm_input'
+                                type='email'
+                                autoComplete='email'
+                                autoCapitalize='off'
+                                pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                                required
+                                autoCorrect='off'
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.email.value}
+                            />
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            <div className='registerForm_fieldContainer'>
-                <span className='registerForm_checkboxTitle'>Sexo</span>
-                <div className='registerForm_checkboxField' style={{ marginBottom: 3 }}>
-                    <input
-                        type='radio'
-                        name='sex'
-                        className='registerForm_checkboxInput'
-                        value='Masculino'
-                        onChange={checkValue}
-                    />
-                    <label className='registerForm_checkboxLabel'>Masculino</label>
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>Telefono</span>
+                            <input
+                                name='phone'
+                                className='registerForm_input'
+                                type='tel'
+                                autoComplete='tel'
+                                autoCapitalize='off'
+                                pattern='^[+0-9].[0-9]*'
+                                required
+                                autoCorrect='off'
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.phone.value}
+                            />
+                        </label>
+                    </div>
                 </div>
-                <div className='registerForm_checkboxField'>
-                    <input
-                        type='radio'
-                        name='sex'
-                        className='registerForm_checkboxInput'
-                        value='Femenino'
-                        onChange={checkValue}
-                    />
-                    <label className='registerForm_checkboxLabel'>Femenino</label>
-                </div>
-            </div>
 
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>{"Nacimiento (MES/DÍA/AÑO)"}</span>
-                        <input
-                            name='birth'
-                            className='registerForm_input'
-                            type='text'
-                            autoCapitalize='off'
-                            pattern='^[0-9/ -]+$'
-                            required
-                            autoCorrect='off'
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.birth.value}
-                        />
-                    </label>
-                </div>
-            </div>
-
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>Correo electronico</span>
-                        <input
-                            name='email'
-                            className='registerForm_input'
-                            type='email'
-                            autoComplete='email'
-                            autoCapitalize='off'
-                            pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
-                            required
-                            autoCorrect='off'
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.email.value}
-                        />
-                    </label>
-                </div>
-            </div>
-
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>Telefono</span>
-                        <input
-                            name='phone'
-                            className='registerForm_input'
-                            type='tel'
-                            autoComplete='tel'
-                            autoCapitalize='off'
-                            pattern='^[+0-9].[0-9]*'
-                            required
-                            autoCorrect='off'
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.phone.value}
-                        />
-                    </label>
-                </div>
-            </div>
-
-            {/* <div className='registerForm_fieldContainer'>
+                {/* <div className='registerForm_fieldContainer'>
                 <div className='registerForm_field'>
                     <label className='registerForm_label'>
                         <span className='registerForm_labelSpan'>Foto</span>
@@ -475,69 +470,69 @@ const Register = () => {
                 </div>
             </div> */}
 
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>{'Contraseña'}</span>
-                        <input
-                            name='password'
-                            className='registerForm_input discTxtSecurity'
-                            type='password'
-                            autoCapitalize='off'
-                            required
-                            autoCorrect='off'
-                            autoComplete='new_password'
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.password.value}
-                        />
-                    </label>
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>{'Contraseña'}</span>
+                            <input
+                                name='password'
+                                className='registerForm_input discTxtSecurity'
+                                type='password'
+                                autoCapitalize='off'
+                                required
+                                autoCorrect='off'
+                                autoComplete='new_password'
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.password.value}
+                            />
+                        </label>
+                    </div>
                 </div>
-            </div>
 
-            <div className='registerForm_fieldContainer'>
-                <div className='registerForm_field'>
-                    <label className='registerForm_label'>
-                        <span className='registerForm_labelSpan'>Confirmar contraseña</span>
-                        <input
-                            name='confirmPassword'
-                            className='registerForm_input discTxtSecurity'
-                            type='password'
-                            autoCapitalize='off'
-                            required
-                            autoCorrect='off'
-                            autoComplete='off'
-                            onChange={(evt) => {
-                                loadPlaceHolderAnim(evt);
-                                checkValue(evt);
-                            }}
-                            onFocus={loadBorderAnim}
-                            onBlur={deLoadBorderAnim}
-                            value={inputData.confirmPassword.value}
-                        />
-                    </label>
+                <div className='registerForm_fieldContainer'>
+                    <div className='registerForm_field'>
+                        <label className='registerForm_label'>
+                            <span className='registerForm_labelSpan'>Confirmar contraseña</span>
+                            <input
+                                name='confirmPassword'
+                                className='registerForm_input discTxtSecurity'
+                                type='password'
+                                autoCapitalize='off'
+                                required
+                                autoCorrect='off'
+                                autoComplete='off'
+                                onChange={(evt) => {
+                                    loadPlaceHolderAnim(evt);
+                                    checkValue(evt);
+                                }}
+                                onFocus={loadBorderAnim}
+                                onBlur={deLoadBorderAnim}
+                                value={inputData.confirmPassword.value}
+                            />
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <button className='registerSubmitBtn' type='submit' disabled>Registrarse</button>
-            <div className='redirectToSignInContainer' style={{width: '100%', marginTop: '30px'}}>
+                <button className='registerSubmitBtn' type='submit' disabled>Registrarse</button>
+            </form>
+            <div className='redirectToSignInContainer' style={{ width: '100%', marginTop: '30px' }}>
                 <p className='redirectToSignIn'>
                     {"Ya tienes cuenta? "}
                     <Link className='redirectToSignIn_link' to='/signin'>Entrar</Link>
                 </p>
             </div>
-        </form>
-        {
-            loading && (
-                <div className='register_loadingPanel'>
-                    <div className='register_loadingCircle'></div>
-                </div>
-            )
-        }
-    </div>
+            {
+                loading && (
+                    <div className='register_loadingPanel'>
+                        <div className='register_loadingCircle'></div>
+                    </div>
+                )
+            }
+        </div>
     )
 }
 

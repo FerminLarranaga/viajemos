@@ -7,6 +7,9 @@ const Home = () => {
     console.log(user);
     return (
         <div>
+            <header>
+                
+            </header>
             <h1>
                 {`Hola ${user.name} ${user.surname}`}
             </h1>
